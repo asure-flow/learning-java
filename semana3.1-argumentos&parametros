@@ -1,0 +1,10 @@
+package Discos,
+public class Usuario {
+public static void main (String [] args) {
+String saludo = "Bienvenido al sistema de streaming";
+System.out.printIn(saludos);
+Disco.elMio = new Disco ();
+elMio.setPermitidos = (15)
+Disco elTuyo = new Disco ((short)
+"Ahora los ves, ahora no", 2014, 10)
+elMio
