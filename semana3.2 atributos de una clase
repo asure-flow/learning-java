@@ -23,3 +23,10 @@ public Disco (short tipo , String nombre , int fecha , int permitidas) {
 }
 public Disco () {
 }
+
+//auxiliares
+public final static int checaEntero (int limInf, int arg, int limSup) {
+return (arg < limInf
+? limSup
+: ( arg > limSup
+? limSup:
