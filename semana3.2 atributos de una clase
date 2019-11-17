@@ -1,0 +1,25 @@
+package discos;
+/**
+* Disco digital paara su uso por una compañia de
+* "streaming". se usa como ejemplo en algunos
+
+*/
+public class Discos implements ServicioDisco {
+//atributos de una clase
+private static final int MAX_PERMITIDAS = 50;
+//atributos de objetos constantes
+private final int ANHO;
+private final String NOMBRE:
+provate final short TIPO_DISCO;
+
+//variables de un objeto
+private int activas;
+private int permitidas;
+
+//constructores
+public Disco (short tipo , String nombre , int fecha) {
+}
+public Disco (short tipo , String nombre , int fecha , int permitidas) {
+}
+public Disco () {
+}
