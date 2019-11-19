@@ -1,6 +1,6 @@
 /**
  * Declaramos el paquete (Contenedor de clases, que permite agrupar las distintas partes de un programa y que por o general
- * y que tiene una funcionalidad y elementos comunes, 
+ * y que tiene una funcionalidad y elementos comunes,
  * definiendo la ubicacion de dichas clases en un directorio de estrutura jerarquica
  */
 package discos;
@@ -24,9 +24,9 @@ import java.util.Scanner;
 
 /**
  * declaramos una constante (valores que nunca cambian)
- * Cuando usamos “static final” se dice que 
+ * Cuando usamos “static final” se dice que
  * creamos una constante de clase, un atributo común a todos los objetos de esa clase.
- * llamemos interfaz define la lista de métodos, 
+ * llamemos interfaz define la lista de métodos,
  * pero para que una clase posea un interfaz hay que indicar explícitamente que lo implementa mediante la claúsula implements
  */
 public class Disco implements ServiciosDisco {
@@ -35,7 +35,7 @@ public class Disco implements ServiciosDisco {
     private static final short BR = 3;
     private static final int ANHO = 1900; //primer anho valido
     private static final int ANHOU = 2016; //ultimo anho valido
-    
+
     /* atributos de la clase */
     /**
      * cuando utilizamos final, declaramos que una variable es de tipo constante
@@ -46,8 +46,31 @@ public class Disco implements ServiciosDisco {
     private final int FECHA;    //fecha de grabacion
     private int permitidas;     //maximo transmisiones permitidas
     private int activas;        //transmisiones activas
+
+/**
+ * constructor por omision
+ * interacciona con el usuario
+ * solicita los datos de inicializacion del disco.
+ * La clase Scanner de Java provee métodos para leer valores de entrada de varios tipos
+ * y está localizada en el paquete java.util.
+ * */
+
+public Disco  () {
+    Scanner sc = new Scanner (System.in);   //construccion del scanner
+    System.out.println("Que deseas grabar: " + "(1) CD, (2) DVD, (3) BlueRay");
+    System.out.println("Elige el tipo de disco (1,2,3):-->");
+    TIPO_DISCO = (short) checaRangos(sc.nextShort(),CD,BR);
+    sc.nextLine();
+    System.out.println("Ahora dame"+
+            (TIPO_DISCO == CD
+            ? "el nombre del cantante"
+                        : TIPO_DISCO ==DVD
+                    ? "el nombre de la pelicula"
+                    : "el nombre de la serie") + 
+            "-->");
     
-    
+
+}
 
 
 }
