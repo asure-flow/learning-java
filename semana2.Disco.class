@@ -1,0 +1,118 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package discos;
+
+import java.util.Scanner;
+
+public class Disco implements ServiciosDisco {
+    private static final short CD = 1;
+    private static final short DVD = 2;
+    private static final short BR = 3;
+    private static final int ANHO1 = 1900;
+    private static final int ANHOU = 2016;
+    private final short TIPO_DISCO;
+    private final String NOMBRE;
+    private final int FECHA;
+    private int permitidas;
+    private int activas;
+
+    public Disco() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Que deseas grabar: (1) CD, (2) DVD, (3) BlueRay");
+        System.out.print("Elige tipo de disco (1,2,3):--> ");
+        this.TIPO_DISCO = (short)this.checaRangos(sc.nextShort(), 1, 3);
+        sc.nextLine();
+        System.out.print("Ahora dame " + (this.TIPO_DISCO == 1 ? "el nombre del cantante" : (this.TIPO_DISCO == 2 ? "el nombre de la pelicula" : "el nombre de la serie")) + "-->");
+        this.NOMBRE = this.checaCadena(sc.nextLine());
+        System.out.print("Ahora toca el anho en que fue grabado (> 1900):-->");
+        this.FECHA = this.checaRangos(sc.nextInt(), 1900, 2016);
+        sc.nextLine();
+        System.out.print("Dame ahora el numero de transmisiones permitidas (1-20) -->");
+        this.permitidas = this.checaRangos(sc.nextInt(), 1, 20);
+        sc.nextLine();
+        System.out.println("Gracias");
+        sc.close();
+    }
+
+    public Disco(short tipo, String nombre, int fecha) {
+        this.TIPO_DISCO = tipo;
+        this.NOMBRE = nombre;
+        this.FECHA = fecha;
+    }
+
+    public Disco(short tipo, String nombre, int fecha, int permitidas) {
+        this.TIPO_DISCO = tipo;
+        this.NOMBRE = nombre;
+        this.FECHA = fecha;
+        this.permitidas = permitidas;
+    }
+
+    public short getTIPO_DISCO() {
+        return 0;
+    }
+
+    public String getNOMBRE() {
+        return null;
+    }
+
+    public int getANHO() {
+        return 0;
+    }
+
+    public int getPermitidas() {
+        return 0;
+    }
+
+    public int getActivas() {
+        return 0;
+    }
+
+    public void setPermitidas(int permisos) {
+    }
+
+    public void setActivas(int activ) {
+    }
+
+    public String toString() {
+        return null;
+    }
+
+    public String muestraDisco(String titulo) {
+        return null;
+    }
+
+    public String daTransmision() {
+        return null;
+    }
+
+    public boolean terminaTransmision() {
+        return false;
+    }
+
+    public ServiciosDisco copiaDisco() {
+        return null;
+    }
+
+    private short checaTipo(short tipo, short limI, short limS) {
+        return tipo < limI ? limI : (tipo > limS ? limS : tipo);
+    }
+
+    private String checaCadena(String cadena) {
+        return cadena != null && cadena.length() != 0 ? cadena : "No identificado";
+    }
+
+    private int checaFecha(int fecha, int primerAnho, int ultimoAnho) {
+        return fecha < primerAnho ? primerAnho : (fecha > ultimoAnho ? ultimoAnho : fecha);
+    }
+
+    private int checaRangos(int que, int limI, int limS) {
+        return que < limI ? limI : (que > limS ? limS : que);
+    }
+
+    public static void main(String[] args) {
+        new Disco();
+    }
+}
